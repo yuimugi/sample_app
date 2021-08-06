@@ -1,8 +1,10 @@
 class TodolistsController < ApplicationController
+
   def new
     @list = List.new
   end
-  
+
+  # 以下を追加
   def create
     # １. データを新規登録するためのインスタンス作成
     list = List.new(list_params)
@@ -17,7 +19,7 @@ class TodolistsController < ApplicationController
   def list_params
     params.require(:list).permit(:title, :body)
   end
-  
+
 end
 
 
